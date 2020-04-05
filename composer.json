@@ -1,6 +1,28 @@
 {
-    "name": "lachee/fontawesome-5-cheetsheet",
-    "description": "Font Awesome 5 Cheatsheet",
-    "type": "library",
-    "require": {}
+    "name": "buonzz/composer-library-template",
+    "description": "Boilerplate package for creating other packages.",
+    "keywords": ["template", "composer", "package"],
+    "license": "DBAD",
+    "authors": [
+        {
+            "name": "Darwin Biler",
+            "email": "buonzz@gmail.com"
+        }
+    ],
+    "type": "project",
+    "require": {
+		"php": ">=7.1"
+    },
+    "require-dev": {
+		"phpunit/phpunit": "6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "lachee\\fontawesome\\": "src/"
+        }
+    },
+    "scripts": {
+        "post-update-cmd": "lachee\\fontawesome\\Updater::postUpdate",        
+        "post-install-cmd": "lachee\\fontawesome\\Updater::postUpdate"
+    }
 }
