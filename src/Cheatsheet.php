@@ -10,6 +10,7 @@
 */
 class Cheatsheet{
    private static $_cache = null;
+   private static $_lookup = [];
 
    /** Loads the icons */
    public static function init() {
@@ -18,6 +19,11 @@ class Cheatsheet{
 
       $content = file_get_contents(__DIR__ . "/icons.dat");
       self::$_cache = unserialize($content);
+      self::$_lookup = [];
+
+      foreach(self::$_cache as $name => $icon) {
+         self::$_lookup[$icon->unicode] = $name;
+      }
    }
 
    /** Clears the icons */
@@ -37,6 +43,15 @@ class Cheatsheet{
       self::checkinit();
       $name = strtolower($name);
       return self::$_cache[$name] ?? null;
+   }
+
+   /** Gets the icon from the unicode codepoint (ie f601)
+    * @return Icon|null
+    */
+   public static function fromUnicode($unicode) {
+      self::checkinit();
+      $unicode = strtolower($unicode);
+      return self::fromName(self::$_lookup[$unicode]) ?? null;
    }
 
    /** Gets all the icons
