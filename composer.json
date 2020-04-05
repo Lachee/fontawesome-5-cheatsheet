@@ -16,7 +16,7 @@
 		"phpunit/phpunit": "6.*"
     },
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "lachee\\fontawesome\\": "src/"
         }
     },
