@@ -9,6 +9,13 @@ class Updater {
     public static function postUpdate(Event $event)
     {
         $composer = $event->getComposer();
+
+        echo "Updated\n";
+        self::update();
+    }
+    public static function postPackageInstall(PackageEvent $event)
+    {
+        echo "Package Installed\n";
         self::update();
     }
 
@@ -37,7 +44,6 @@ class Updater {
             }
 
             $icons[$e['id']] = $icon;
-            break;
         }
 
         echo "Saving Structure\n";

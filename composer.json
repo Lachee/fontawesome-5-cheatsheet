@@ -21,7 +21,14 @@
         }
     },
     "scripts": {
-        "post-update-cmd": "lachee\\fontawesome\\Updater::postUpdate",        
-        "post-install-cmd": "lachee\\fontawesome\\Updater::postUpdate"
+        "post-update-cmd": [
+            "lachee\\fontawesome\\Updater::postUpdate"
+        ],
+        "post-install-cmd": [
+            "lachee\\fontawesome\\Updater::postUpdate"
+        ],
+        "post-package-install": [
+            "lachee\\fontawesome\\Updater::postPackageInstall"
+        ]
     }
 }
