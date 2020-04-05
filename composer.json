@@ -1,15 +1,14 @@
 {
-    "name": "buonzz/composer-library-template",
-    "description": "Boilerplate package for creating other packages.",
-    "keywords": ["template", "composer", "package"],
-    "license": "DBAD",
+    "name": "lachee/fontawesome-5-cheetsheet",
+    "description": "Font Awesome 5 Cheatsheet",
+    "type": "library",
     "authors": [
         {
-            "name": "Darwin Biler",
-            "email": "buonzz@gmail.com"
+            "name": "Lachee",
+            "email": "lachlan@chickatrice.net"
         }
     ],
-    "type": "project",
+    "type": "library",
     "require": {
 		"php": ">=7.1"
     },
