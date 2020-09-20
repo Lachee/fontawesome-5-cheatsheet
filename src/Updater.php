@@ -26,10 +26,11 @@ class Updater {
         $start = strpos($html, 'window.__inline_data__ = ') + 25;
         $end = strpos($html, '</script>', $start);
         $json = substr($html, $start, $end - $start);
+        file_put_contents(__DIR__ . "/fontawesome.json", $json);
 
         echo "Reading Structure\n";
         $obj = json_decode($json, true);
-        $elms = $obj[2]['data'];
+        $elms = $obj[count($obj) - 1]['data'];
 
         $icons = [];
         foreach($elms as $e) {
